@@ -11,25 +11,14 @@ options=("!strip")
 source=("git://github.com/dwarq7/$pkgname.git")
 sha256sums=('SKIP')
 
-prepare() {
-	msg2 "Download dependencies"
-	
-	export GOPATH="$startdir"
-	
-	cd "$srcdir/$pkgname"
-	make deps
-}
-
 build() {
-	cd "$srcdir/$pkgname"
-	make build
+  cd "$srcdir"
+
+  go build -o blya main.go
 }
 
 package() {
-	cd "$srcdir/$pkgname"
-	
-	export DESTDIR="$pkgdir"
-	make install
-	make clean
-}
+  cd "$srcdir"
 
+  install -Dm755 "blya" "$pkgdir/usr/bin/$pkgname"
+}
