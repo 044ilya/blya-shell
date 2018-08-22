@@ -30,5 +30,6 @@ package() {
 	
 	export DESTDIR="$pkgdir"
 	make install
+	make clean
 }
 

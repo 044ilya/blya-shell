@@ -6,7 +6,6 @@ GOGET=$(GOCMD) get
 BINARY_NAME=blya
 DIR=$(BINARY_NAME)-shell
 
-DESTDIR?=./result
 
 all: build
 
@@ -29,8 +28,8 @@ deps:
 
 install:
 	# main binary
-	install -D -m755 "./$(BINARY_NAME)" "$(DESTDIR)/usr/bin/$(BINARY_NAME)"
+	install -D -m755 "./$(BINARY_NAME)" "/usr/bin/$(BINARY_NAME)"
 
 
 uninstall:
-	rm -f "$(DESTDIR)/usr/bin/$(BINARY_NAME)"
+	rm -f "/usr/bin/$(BINARY_NAME)"

@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"os/user"
 	"path/filepath"
 	"strings"
 
@@ -15,10 +16,12 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	os.Setenv("USER", "ilya")
-	os.Setenv("HOME", "/home/ilya")
 	fmt.Println(color.White("Welcome to"), color.BLightRed("BLYA Shell"), color.White("- Bilyk Ilya Shell!"))
 	for {
+		user, err := user.Current()
+		if err != nil {
+			log.Fatal(err)
+		}
 		dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 		if err != nil {
 			log.Fatal(err)
@@ -26,7 +29,7 @@ func main() {
 		currentDir := strings.Split(dir, "/")
 		dir = currentDir[len(currentDir)-1]
 		switch dir {
-		case os.Getenv("USER"):
+		case user.HomeDir:
 			dir = "~"
 		case "":
 			dir = "/"
