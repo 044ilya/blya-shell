@@ -26,13 +26,15 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		currentDir := strings.Split(dir, "/")
-		dir = currentDir[len(currentDir)-1]
+
 		switch dir {
 		case user.HomeDir:
 			dir = "~"
-		case "":
+		case "/":
 			dir = "/"
+		default:
+			currentDir := strings.Split(dir, "/")
+			dir = currentDir[len(currentDir)-1]
 		}
 		fmt.Print(color.BLightBlue("λ "), color.BLightBlue(dir), " ")
 
