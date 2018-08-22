@@ -10,6 +10,7 @@
 ```
 $ curl -O https://raw.githubusercontent.com/dwarq7/blya-shell/master/PKGBUILD
 $ makepkg
+$ pacman -U blya-shell-1.0-0-x86_64.pkg.tar.xz
 ```
 #### Basic install
 ```
