@@ -12,13 +12,13 @@ source=("git://github.com/dwarq7/$pkgname.git")
 sha256sums=('SKIP')
 
 build() {
-  cd "$srcdir"
+  cd "$pkgname"
 
   go build -o blya main.go
 }
 
 package() {
-  cd "$srcdir"
+  cd "$pkgname"
 
   install -Dm755 "blya" "$pkgdir/usr/bin/$pkgname"
 }
