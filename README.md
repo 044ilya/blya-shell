@@ -18,6 +18,9 @@ $ git clone https://github.com/dwarq7/blya-shell.git
 $ cd blya-shell
 $ make 
 ```
+### Shell info
+**BLYA Shell** doesn't support `>, >>, |, ||`.
+It supports `cd` with no args, but to use it you need to change `os.Setenv("USER", "<your_username>")` and `os.Setenv("HOME", "<your_user_home>")` in the [source code](https://github.com/dwarq7/blya-shell/blob/master/main.go).
 
 ## Sources
 
