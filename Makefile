@@ -4,6 +4,7 @@ GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
 BINARY_NAME=blya
+DIR=$(BINARY_NAME)-shell
 
 DESTDIR?=./result
 
@@ -17,7 +18,7 @@ test:
 
 clean: 
 	$(GOCLEAN)
-	rm -f $(BINARY_NAME)
+	rm -rf $(DIR)
 
 run:
 	$(GOBUILD) -o $(BINARY_NAME)
