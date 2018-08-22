@@ -8,7 +8,7 @@
 #### 
  ![Arch Linux Logo](https://www.archlinux.org/favicon.ico) **Arch Linux**
 ```
-$ curl curl -O https://raw.githubusercontent.com/dwarq7/blya-shell/master/PKGBUILD
+$ curl -O https://raw.githubusercontent.com/dwarq7/blya-shell/master/PKGBUILD
 $ makepkg
 ```
 #### Basic install
